@@ -1,0 +1,63 @@
+[package]
+name = "otpal"
+version = "0.1.0"
+authors = ["JUSTRobot-hub"]
+license = "MIT"
+homepage = "https://github.com/JUSTRobot-hub"
+edition = "2021"
+
+[lib]
+name = "otpal_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[features]
+# Keeps the WEBVIEW2_* overrides so tests can attach a debugger. Never enabled in shipped builds.
+e2e = []
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+argon2 = "0.5"
+base64 = "0.22"
+aes-gcm = "0.10"
+hmac = "0.12"
+sha1 = "0.10"
+sha2 = "0.10"
+pbkdf2 = "0.12"
+zeroize = "1"
+getrandom = "0.3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = [
+  "Win32_Foundation",
+  "Win32_Security",
+  "Win32_Security_Authorization",
+  "Win32_Security_Cryptography",
+  "Win32_System_RemoteDesktop",
+  "Win32_System_Threading",
+  "Win32_UI_Shell",
+  "Win32_UI_WindowsAndMessaging",
+] }
+
+windows = { version = "0.61", features = ["Security_Credentials", "Security_Cryptography", "Storage_Streams", "Foundation"] }
+
+webview2-com = "0.39"
+windows-core = "0.62"
+
+[profile.release]
+lto = true
+opt-level = "s"
+strip = true
+panic = "abort"
+codegen-units = 1
+
+# The password hash must run at full speed (the app is tuned for size otherwise),
+# because slower hashing here only helps an attacker's guess rate relative to ours.
+[profile.release.package.argon2]
+opt-level = 3
+[profile.release.package.blake2]
+opt-level = 3

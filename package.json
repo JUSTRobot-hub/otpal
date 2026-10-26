@@ -1,0 +1,27 @@
+{
+  "name": "otpal",
+  "private": true,
+  "description": "A private, offline Google Authenticator for Windows. Import once, keep your codes on your PC.",
+  "author": "JUSTRobot-hub (https://github.com/JUSTRobot-hub)",
+  "license": "MIT",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "tauri": "tauri",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/sora": "^5.3.0",
+    "@tauri-apps/api": "^2.12.4",
+    "jsqr": "^1.4.0",
+    "qrcode-generator": "^2.0.4",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.4",
+    "vite": "^8.3.5"
+  }
+}

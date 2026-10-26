@@ -22,7 +22,7 @@
     "publisher": "JUSTRobot-hub",
     "copyright": "Copyright (c) 2026 JUSTRobot-hub",
     "homepage": "https://github.com/JUSTRobot-hub",
-    "targets": ["nsis"],
+    "targets": ["nsis", "deb", "appimage"],
     "icon": ["icons/32x32.png", "icons/128x128.png", "icons/icon.ico"]
   }
 }

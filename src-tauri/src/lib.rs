@@ -1,3 +1,4 @@
+#[cfg(windows)]
 mod hardening;
 mod hello;
 mod protect;
@@ -20,6 +21,10 @@ fn open_author_page() {
         unsafe {
             ShellExecuteW(std::ptr::null_mut(), verb.as_ptr(), url.as_ptr(), std::ptr::null(), std::ptr::null(), SW_SHOWNORMAL);
         }
+    }
+    #[cfg(not(windows))]
+    {
+        let _ = std::process::Command::new("xdg-open").arg("https://github.com/JUSTRobot-hub").spawn();
     }
 }
 

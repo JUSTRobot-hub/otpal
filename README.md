@@ -9,7 +9,7 @@
 Import your Google Authenticator accounts once. Keep them encrypted on your own PC.<br />
 No cloud. No account. No tracking.
 
-[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0a0b0e?style=flat-square&logo=windows&logoColor=8cf2c0)](#install)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-0a0b0e?style=flat-square&logo=windows&logoColor=8cf2c0)](#install)
 [![Built with Tauri](https://img.shields.io/badge/built%20with-Tauri%202-0a0b0e?style=flat-square&logo=tauri&logoColor=8cf2c0)](https://tauri.app)
 [![Encryption](https://img.shields.io/badge/vault-AES--256--GCM%20%2B%20Argon2id-0a0b0e?style=flat-square)](#how-your-codes-are-protected)
 [![License: MIT](https://img.shields.io/badge/license-MIT-0a0b0e?style=flat-square)](LICENSE)
@@ -57,6 +57,8 @@ Google Authenticator keeps your codes on your phone. Lose the phone and you can 
 **Installer**: download `Otpal_0.1.0_x64-setup.exe` for a normal Start menu install (per-user, no admin rights needed).
 
 Requires Windows 10 or 11 with the WebView2 runtime (already included in Windows 11 and current Windows 10).
+
+**Linux** (experimental): download `Otpal_0.1.0_amd64.AppImage` (`chmod +x`, then run) or `Otpal_0.1.0_amd64.deb` (`sudo apt install ./Otpal_0.1.0_amd64.deb`). The vault is encrypted with your master password. Windows-only extras (Windows account binding, Windows Hello, screen-capture and process protection) are not available on Linux.
 
 ## Getting started
 
